@@ -9,6 +9,8 @@ export default function Calendar() {
     const today = dayjs()
 
     const [dayObj, setdayObj] = useState(dayjs())
+    
+    const daysInMonth = dayObj.daysInMonth()
 
     const nextMonth = () => {
         setdayObj(dayObj.add(1, "month"));
@@ -20,22 +22,31 @@ export default function Calendar() {
 
     const dateFormat = "MMMM YYYY"
 
-    const days = dayjs().daysInMonth()
+    const currentDate = () => {
+      setdayObj(dayjs())
+    }
 
-    console.log(dayjs().daysInMonth());
+    console.log();
 
   return (
     <div>
+      
       <div className='calendar-header'>
-        <button onClick={prevMonth}>{"<"}</button>
-        {dayObj.format(dateFormat)}
-        <button onClick={nextMonth}>{">"}</button>
+        <button onClick={prevMonth}>&lt;</button>
+        &nbsp;
+        <button onClick={currentDate}>Today</button>
+        &nbsp;
+        <button onClick={nextMonth}>&gt;</button>
       </div>
+
+      <div className='month-year-header'>{dayObj.format(dateFormat)}</div>
+
       <div className='weekday-container'>
         {weekdays.map((weekday, index) => <div key={index}>{weekday}</div>)}
       </div> 
+
       <div className='calendar-grid'>
-        {range(days).map((day, index) => (
+        {range(daysInMonth).map((day, index) => (
         <div className='calendar-body' key={index}>
             {day + 1}
         </div>

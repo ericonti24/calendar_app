@@ -6,13 +6,18 @@
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
+  
+}
+
+.month-year-header {
+  font-size: large;
+  margin-top: 10px;
 }
 
 .weekday-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  /* border: 1px solid; */
   margin: 5px;
   height: 100%;
 }
