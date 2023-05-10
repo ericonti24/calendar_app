@@ -3,23 +3,30 @@
 }
 
 .calendar-header {
-  display: flex;
   height: 100%;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   
 }
 
+.calendar-header-buttons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .month-year-header {
-  font-size: large;
+  font-size: 25px;
   margin-top: 10px;
 }
 
 .weekday-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  margin: 5px;
+  margin: 20px;
   height: 100%;
+  width: 100%;
 }
 
 .calendar-grid {
@@ -27,13 +34,42 @@
   grid-template-columns: repeat(7, 1fr);
 }
 
-.calendar-body {
+.calendar-card {
   display: grid;
   border: 1px solid;
   grid-template-rows: repeat(5, 1fr);
+  /* height: 100%; */
+  
+  /* width: 100%; */
+  text-align: left;
+  cursor: pointer;
+}
+
+.highlight {
+  color: red;
+}
+
+.calendar-body--prev-month--faded {
+  opacity: .4;
+  border: 1px solid;
+  text-align: left;
   height: 100%;
   width: 100%;
-  text-align: left;
 }
+
+.calendar-body--next-month--faded {
+  opacity: .4;
+  border: 1px solid;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar-card-day {
+  cursor: pointer;
+}
+
+
+
 
 
