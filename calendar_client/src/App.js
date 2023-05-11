@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './App.css';
 import Calendar from './Calendar';
 import Modal from "./ModalComponents/Modal"
@@ -43,7 +43,8 @@ function App() {
 
   const [modalOpen, setModalOpen] = useState(false)
   const [remindersList, setRemindersList] = useState(list)
-  const [dayObj, setdayObj] = useState(dayjs())
+  const dayObj = dayjs()
+
 
   const thisYear = dayObj.year()
   const thisMonth = dayObj.month()
